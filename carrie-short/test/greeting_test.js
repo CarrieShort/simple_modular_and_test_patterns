@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const greetCli = require(__dirname + '/../bin/greeting.js');
+const greetCli = require(__dirname + '/../bin/greeting');
 
 describe('greeting', ()=>{
   before(()=>{
