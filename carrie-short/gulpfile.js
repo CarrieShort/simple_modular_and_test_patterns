@@ -1,8 +1,6 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
-const watch = require('gulp-watch');
-debugger;
 
 var files = ['index.js', 'lib/**/*.js', 'bin/*', 'gulpfile.js'];
 var gulpFiles = ['index.js', 'lib/**/*.js', 'bin/*', 'gulpfile.js', 'test/**/*.js','package.json'];
@@ -45,14 +43,10 @@ gulp.task('lint:nontest', () => {
 });
 
 gulp.task('test', ()=>{
-  return gulp.src('./test/**/*test.js', {read: false})
-		// gulp-mocha needs filepaths so you can't have any plugins before it
+  return gulp.src('./test/**/*test.js')
 		.pipe(mocha());
 });
 
-gulp.task('rerun',function () {
-  gulp.watch(gulpFiles,['lint']);
-});
-
 gulp.task('lint', ['lint:nontest', 'lint:test','test']);
-gulp.task('default', ['lint','rerun']);
+gulp.task('default', 'lint');
+gulp.watch(gulpFiles,['lint']);
