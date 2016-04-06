@@ -15,14 +15,14 @@ describe('greeting', ()=>{
   it('should greet test',()=>{
     expect(greetCli()).to.eql('hello test');
   });
-});
+  
+  describe('with no arguments', ()=>{
+    before(()=>{
+      process.argv = [];
+    });
 
-describe('with no arguments', ()=>{
-  before(()=>{
-    process.argv = [];
-  });
-
-  it('should greet the world',()=>{
-    expect(greetCli()).to.eql('hello world');
+    it('should greet the world',()=>{
+      expect(greetCli()).to.eql('hello world');
+    });
   });
 });
