@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
+const mocha = require('gulp-mocha');
 debugger;
 
 var files = ['index.js', 'lib/**/*.js', 'bin/*', 'gulpfile.js'];
@@ -31,3 +32,12 @@ gulp.task('lint:nontest', () => {
     }))
     .pipe(eslint.format());
 });
+
+gulp.task('test', ()=>{
+  return gulp.src('./test/**/*test.js', {read: false})
+		// gulp-mocha needs filepaths so you can't have any plugins before it
+		.pipe(mocha());
+});
+
+gulp.task('lint', ['lint:nontest', 'lint:test','test']);
+gulp.task('default', ['lint']);
