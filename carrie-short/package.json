@@ -1,0 +1,29 @@
+{
+  "name": "greeting",
+  "version": "1.0.0",
+  "description": "this app will say hello in the console to a parameter",
+  "main": "index.js",
+  "bin": {
+    "greeting": "greeting.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarrieShort/simple_modular_and_test_patterns.git"
+  },
+  "author": "Carrie Short",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarrieShort/simple_modular_and_test_patterns/issues"
+  },
+  "homepage": "https://github.com/CarrieShort/simple_modular_and_test_patterns#readme"
+}
