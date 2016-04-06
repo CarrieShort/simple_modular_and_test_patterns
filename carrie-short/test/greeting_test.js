@@ -9,7 +9,7 @@ describe('greeting', ()=>{
   });
 
   after(()=>{
-    process.argv = this.process_backup
+    process.argv = this.process_backup;
   });
 
   it('should greet test',()=>{
