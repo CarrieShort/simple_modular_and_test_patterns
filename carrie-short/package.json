@@ -4,26 +4,23 @@
   "description": "this app will say hello in the console to a parameter",
   "main": "index.js",
   "bin": {
-    "greeting": "greeting.js"
+    "greeting": "./bin/greeting.js"
   },
   "directories": {
     "test": "test"
   },
   "dependencies": {
+  },
+  "devDependencies": {
     "chai": "^3.5.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CarrieShort/simple_modular_and_test_patterns.git"
   },
   "author": "Carrie Short",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CarrieShort/simple_modular_and_test_patterns/issues"
-  },
-  "homepage": "https://github.com/CarrieShort/simple_modular_and_test_patterns#readme"
+  "license": "MIT"
 }
