@@ -9,15 +9,26 @@ var gulpFiles = ['index.js', 'lib/**/*.js', 'bin/*', 'gulpfile.js', 'test/**/*.j
 
 gulp.task('lint:test',()=>{
   return gulp.src('./test/**/*test.js')
-    // .pipe(eslint({
-    //   rules: {
-    //     'indent': ['error', 2],
-    //   },
-    //   envs: [
-    //     'mocha',
-    //     'es6'
-    //   ]
-    // }))
+    .pipe(eslint({
+      rules: {
+        'semi': [2, 'always'],
+        'strict': 0,
+        'indent': [2, 2],
+        'quotes': [1, 'single'],
+        'no-multi-spaces': [1, {
+          'exceptions': {
+            'VariableDeclarator': true,
+            'FunctionExpression': true
+          }
+        }],
+        'key-spacing': [0, {'align': 'value'}],
+        'no-underscore-dangle': 0
+      },
+      envs: [
+        'mocha',
+        'es6'
+      ]
+    }))
     .pipe(eslint.format());
 });
 
