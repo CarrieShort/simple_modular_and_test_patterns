@@ -15,7 +15,7 @@ describe('greeting', ()=>{
   it('should greet test',()=>{
     expect(greetCli()).to.eql('hello test');
   });
-  
+
   describe('with no arguments', ()=>{
     before(()=>{
       process.argv = [];
