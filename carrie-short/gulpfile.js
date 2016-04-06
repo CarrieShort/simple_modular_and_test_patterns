@@ -55,4 +55,4 @@ gulp.task('rerun',function () {
 });
 
 gulp.task('lint', ['lint:nontest', 'lint:test','test']);
-gulp.task('default', ['rerun']);
+gulp.task('default', ['lint','rerun']);
