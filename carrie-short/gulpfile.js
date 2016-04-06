@@ -47,6 +47,6 @@ gulp.task('test', ()=>{
 		.pipe(mocha());
 });
 
-gulp.task('lint', ['lint:nontest', 'lint:test','test']);
-gulp.task('default', 'lint');
-gulp.watch(gulpFiles,['lint']);
+gulp.task('allTests', ['lint:nontest', 'lint:test','test']);
+gulp.task('default', ['allTests']);
+gulp.watch(gulpFiles,['allTests']);
