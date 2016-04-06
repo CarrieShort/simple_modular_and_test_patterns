@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
+const watch = require('gulp-watch');
 debugger;
 
 var files = ['index.js', 'lib/**/*.js', 'bin/*', 'gulpfile.js'];
@@ -39,5 +40,9 @@ gulp.task('test', ()=>{
 		.pipe(mocha());
 });
 
+gulp.task('rerun',function () {
+  gulp.watch(['**/*'],['lint']);
+});
+
 gulp.task('lint', ['lint:nontest', 'lint:test','test']);
-gulp.task('default', ['lint']);
+gulp.task('default', ['rerun']);
