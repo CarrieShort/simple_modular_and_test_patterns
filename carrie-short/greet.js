@@ -1,3 +1,3 @@
-const Greeting = require(__dirname + '/lib/greeting.js');
+const greeting = require(__dirname + '/lib/greeting.js');
 
-console.log(new Greeting(process.argv[2]).greet());
+console.log(greeting.greet(process.argv[2]));
